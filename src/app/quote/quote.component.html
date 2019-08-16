@@ -1,6 +1,6 @@
 <div class="container">
 
-  <ul >
-    <li>sdkl</li>
+  <ul *ngFor='let quote of quotes'>
+    <li>{{quote.description}}</li>
   </ul>
 </div>
