@@ -1,6 +1,18 @@
+<br>
 <div class="container">
 
-  <ul *ngFor='let quote of quotes'>
-    <li>{{quote.description}}</li>
+  <ul>
+    <li *ngFor='let quote of quotes;let i = index'>
+      <div class="card">
+        <h6 class="card-header">{{quote.description}}</h6>
+        <div class="card-body">
+         <button type="button" (click)='addUpvote(i)' class="btn btn-primary btn-sm float-right"><small>{{quote.upVote}} Votes</small> </button>
+        <button type="button" (click)='showDetails(i)' class="btn btn-outline-primary float-right btn-sm" name="button"> <small>Details</small> </button>
+        <small class="">Posted On {{quote.postenOn|date}}</small>
+        <app-quote-details *ngIf='quote.showQuote' [quote]='quote'></app-quote-details>
+        </div>
+      </div>
+    </li>
+
   </ul>
 </div>

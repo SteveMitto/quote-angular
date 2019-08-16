@@ -11,6 +11,14 @@ export class QuoteComponent implements OnInit {
   quotes : QuoteB[] =[
     new QuoteB(1,"John Doe","The sweet Medicine for stress Is Jesus",new Date(2019,7,15),this.count)
   ]
+
+  showDetails(index){
+    this.quotes[index].showQuote = !this.quotes[index].showQuote
+  }
+  addUpvote(index){
+    
+    this.quotes[index].upVote = this.count+1;
+  }
   constructor() { }
 
   ngOnInit() {
