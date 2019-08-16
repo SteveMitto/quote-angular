@@ -9,7 +9,9 @@ export class QuoteComponent implements OnInit {
 
   count = 0;
   quotes : QuoteB[] =[
+    new QuoteB(1,"John Doe","The sweet Medicine for stress Is Jesus",new Date(2019,7,15),this.count),
     new QuoteB(1,"John Doe","The sweet Medicine for stress Is Jesus",new Date(2019,7,15),this.count)
+
   ]
 
   showDetails(index){
