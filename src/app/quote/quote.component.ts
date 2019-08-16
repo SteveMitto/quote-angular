@@ -16,8 +16,11 @@ export class QuoteComponent implements OnInit {
     this.quotes[index].showQuote = !this.quotes[index].showQuote
   }
   addUpvote(index){
-    
+
     this.quotes[index].upVote = this.count+1;
+  }
+  deletedQuote(delQuote,index){
+    this.quotes.splice(index,1);
   }
   constructor() { }
 

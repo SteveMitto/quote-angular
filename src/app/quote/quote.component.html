@@ -9,7 +9,7 @@
          <button type="button" (click)='addUpvote(i)' class="btn btn-primary btn-sm float-right"><small>{{quote.upVote}} Votes</small> </button>
         <button type="button" (click)='showDetails(i)' class="btn btn-outline-primary float-right btn-sm" name="button"> <small>Details</small> </button>
         <small class="">Posted On {{quote.postenOn|date}}</small>
-        <app-quote-details *ngIf='quote.showQuote' [quote]='quote'></app-quote-details>
+        <app-quote-details *ngIf='quote.showQuote' [quote]='quote'  (delQuote)='deletedQuote($event,i)'></app-quote-details>
         </div>
       </div>
     </li>
