@@ -10,7 +10,7 @@ export class QuoteComponent implements OnInit {
   count = 0;
   quotes : QuoteB[] =[
     new QuoteB(1,"John Doe","The sweet Medicine for stress Is Jesus",new Date(2019,7,15),this.count),
-    new QuoteB(1,"John Doe","The sweet Medicine for stress Is Jesus",new Date(2019,7,15),this.count)
+    new QuoteB(2,"John Doe","The sweet Medicine for stress Is Jesus",new Date(2019,7,15),this.count)
 
   ]
 
@@ -19,8 +19,10 @@ export class QuoteComponent implements OnInit {
   }
   addUpvote(index){
 
-    this.quotes[index].upVote = this.count+1;
+    this.quotes[index].upVote = this.quotes[index].count+=1;
+
   }
+  
   deletedQuote(delQuote,index){
     this.quotes.splice(index,1);
   }
