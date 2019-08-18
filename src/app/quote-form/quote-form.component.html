@@ -1,20 +1,22 @@
-<div class="container-fluid">
-
-  <form class="form">
+<div class="container-fluid forms">
+  <h3>Add Quote</h3><span  class="close"></span>
+  <img src="./assets/quote.png" alt="quote-image" >
+  <form class="form" (ngSubmit)='addQuote()'>
     <div class="form-group">
       <label for="title">Your Name</label>
-      <input type="text" class="form-control" id="title" [(ngModel)]='newQuote.username' #name='ngModel' name="name" value="" required>
-      <div class="alert alert-warning" [hidden]='name.valid || name.pristine'>
-          <p>Your name is required</p>
+        <input type="text" class="form-control" id="title" [(ngModel)]='newQuote.username' #name='ngModel' name="name" value="" required>
+        <div class="alert alert-warning" [hidden]='name.valid || name.pristine'>
+        <small> Your name is required </small>
+        </div>
       </div>
-    </div>
-    <div class="form-group">
-      <label for="quote">Your Quote</label>
-      <input type="text" class="form-control" id="quote" [(ngModel)]='newQuote.description' #description='ngModel' name="description" required value="">
+      <div class="form-group">
+        <label for="quote">Your Quote</label>
+      <textarea class="form-control" id="quote" [(ngModel)]='newQuote.description' #description='ngModel' name="description" required value=""></textarea>
       <div class="alert alert-warning" [hidden]="description.valid || description.pristine">
-        <p>Describe your quote</p>
+      <small>Describe your quote</small>
       </div>
     </div>
+    <button type="submit" class="btn btn-primary btn-sm btn-block " name="button">Submit</button>
   </form>
 
 </div>
