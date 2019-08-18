@@ -6,7 +6,7 @@ import { QuoteB } from '../quote-b'
   styleUrls: ['./quote.component.css']
 })
 export class QuoteComponent implements OnInit {
-
+  showForm:boolean=false
   count = 0;
   quotes : QuoteB[] =[
     new QuoteB(1,"John Doe","The sweet Medicine for stress Is Jesus",new Date(2019,7,15),this.count),
@@ -22,12 +22,31 @@ export class QuoteComponent implements OnInit {
     this.quotes[index].upVote = this.quotes[index].count+=1;
 
   }
-  
+  displayQuote(bool:boolean){
+    this.showForm = !this.showForm
+  }
+  calcUpest(){
+    for(var i=0;i<this.quotes.length;i++){
+        if(this.quotes[i] >  this.quotes[i+1] ){
+          return i;
+          console.log(i);
+        }
+    }
+  }
+  addedQuote(quote){
+    alert("The problem is at the quote .ts")
+    let quoteLength = this.quotes.length;
+    quote.id =quoteLength +1;
+    quote.postenOn=new Date();
+    this.quotes.push(quote)
+
+  }
   deletedQuote(delQuote,index){
     this.quotes.splice(index,1);
   }
-  constructor() { }
-
+  constructor() {
+    this.calcUpest()
+}
   ngOnInit() {
   }
 
