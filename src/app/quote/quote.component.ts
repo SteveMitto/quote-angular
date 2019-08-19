@@ -8,9 +8,10 @@ import { QuoteB } from '../quote-b'
 export class QuoteComponent implements OnInit {
   showForm:boolean=false
   count = 0;
+  countDown =0;
   quotes : QuoteB[] =[
-    new QuoteB(1,"John Doe","The sweet Medicine for stress Is Jesus",new Date(2019,7,15),this.count),
-    new QuoteB(2,"John Doe","The sweet Medicine for stress Is Jesus",new Date(2019,7,15),this.count)
+    new QuoteB(1,"John Doe","The sweet Medicine for stress Is Jesus",new Date(2019,7,15),this.count,this.countDown),
+    new QuoteB(2,"John Doe","The sweet Medicine for stress Is Jesus",new Date(2019,7,15),this.count,this.countDown)
 
   ]
 
@@ -20,6 +21,11 @@ export class QuoteComponent implements OnInit {
   addUpvote(index){
 
     this.quotes[index].upVote = this.quotes[index].count+=1;
+
+  }
+  addDownVote(index){
+
+    this.quotes[index].downVote = this.quotes[index].countDown+=1;
 
   }
   displayQuote(bool:boolean){
@@ -34,12 +40,12 @@ export class QuoteComponent implements OnInit {
     }
   }
   addedQuote(quote){
-    alert("The problem is at the quote .ts")
+    // alert("The problem is at the quote .ts")
     let quoteLength = this.quotes.length;
     quote.id =quoteLength +1;
     quote.postenOn=new Date();
     this.quotes.push(quote)
-
+    this.showForm = !this.showForm
   }
   deletedQuote(delQuote,index){
     this.quotes.splice(index,1);

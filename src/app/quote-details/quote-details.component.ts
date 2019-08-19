@@ -9,6 +9,7 @@ export class QuoteDetailsComponent implements OnInit {
 @Input() quote :QuoteB;
 @Output() delQuote = new EventEmitter<boolean>();
 
+
   deleteQuote(complete:boolean){
     this.delQuote.emit(complete)
   }
