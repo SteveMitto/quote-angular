@@ -13,7 +13,8 @@
           <!-- <span *ngIf=></span> -->
           <div class="card">
             <!-- <span *ngFor></span> -->
-            <h6 (click)='calcUpest()' class="card-header">{{quote.description}}</h6>
+            <h6 (click)='calcUpest()' class="card-header">{{quote.description}}<br>
+            <small>-{{quote.author}}</small></h6>
             <div class="card-body">
               <button type="button" (click)='addUpvote(i)' class="btn btn-primary btn-sm float-right"><small>{{quote.upVote}} Votes</small> </button>
               <button type="button" (click)='addDownVote(i)' class="btn btn-primary btn-sm float-right"><small>{{quote.downVote}} Down Votes</small> </button>
