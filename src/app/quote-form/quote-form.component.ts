@@ -7,11 +7,12 @@ import { QuoteB } from '../quote-b';
 })
 export class QuoteFormComponent implements OnInit {
 
-newQuote = new QuoteB(0,"","",new Date(),0,0)
+newQuote = new QuoteB(0,"","","",new Date(),0,0)
 @Output() sendQuote = new EventEmitter<QuoteB>();
 @Input() hideForm :boolean;
   addQuote(){
     this.sendQuote.emit(this.newQuote);
+    this.newQuote = new QuoteB(0," "," "," ",new Date(),0,0)
   }
 
   constructor() { }
