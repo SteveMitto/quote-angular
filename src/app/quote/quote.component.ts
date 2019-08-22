@@ -10,8 +10,10 @@ export class QuoteComponent implements OnInit {
   count = 0;
   countDown =0;
   quotes : QuoteB[] =[
-    new QuoteB(1,"John Doe","Somebody","Jesus is the answer for the world today",new Date(2019,7,15),this.count,this.countDown),
-    new QuoteB(2,"John Doe","SomeOne","Procastination is the thief of time",new Date(2019,7,15),this.count,this.countDown)
+    new QuoteB(1,"John Doe","Somebody","Jesus is the answer for the world today",new Date(2019,7,1),this.count,this.countDown),
+    new QuoteB(2,"John Doe","SomeOne","Procastination is the thief of time",new Date(2019,4,2),this.count,this.countDown),
+    new QuoteB(2,"John Doe","SomeOne","Procastination is the thief of time",new Date(2018,3,2),this.count,this.countDown)
+
 
   ]
 
